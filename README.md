@@ -1,8 +1,9 @@
-# prot_seq_pred
+### prot_seq_pred package structure
 
+```
 prot_seq_pred/
-│
-├── protein_activity_prediction/
+|
+|── protein_act_pred/
 │   ├── __init__.py
 │   ├── data_preprocessing/
 │   │   ├── __init__.py
@@ -29,7 +30,7 @@ prot_seq_pred/
 │   │   └── model_utils.py
 │   └── main.py
 ├── notebooks/
-│   └── notebook.ipynb        # Place your Jupyter notebook here
+│   └── notebook.ipynb
 ├── tests/
 │   ├── test_msa_processing.py
 │   ├── test_blast_search.py
@@ -40,18 +41,4 @@ prot_seq_pred/
 ├── setup.py
 ├── requirements.txt
 └── README.md
-
-│   │   ├── file_utils.py
-│   │   ├── sequence_utils.py
-│   │   └── model_utils.py
-│   └── main.py
-├── tests/
-│   ├── test_msa_processing.py
-│   ├── test_blast_search.py
-│   ├── test_vectorization.py
-│   ├── test_model_training.py
-│   ├── test_metrics.py
-│   └── test_utils.py
-├── setup.py
-├── requirements.txt
-└── README.md
+```
