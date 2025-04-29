@@ -1,18 +1,11 @@
-i
----
-
-# 📁 `notebooks/README.md`
-
-```markdown
-# 📓 Residue Interaction Network Construction Notebook
-
-This folder contains:
-
-- [`prot_net_ligs_h.ipynb`](prot_net_ligs_h.ipynb)
 
 ---
 
-## 📘 Notebook Overview
+#  Residue Interaction Network Construction Notebook
+
+---
+
+##  Notebook Overview
 
 | Step | Description |
 |:-----|:------------|
@@ -27,7 +20,7 @@ This folder contains:
 
 ---
 
-## 🧪 Key Techniques
+## Key Techniques
 
 - **Hydrogen bond detection** between residues and ligands.
 - **Graph-based representation** of 3D protein structures.
@@ -35,7 +28,7 @@ This folder contains:
 
 ---
 
-## 📈 Example Use Cases
+## Example Use Cases
 
 - Identifying **allosteric hotspots**.
 - Studying **ligand-mediated interactions**.
@@ -44,7 +37,7 @@ This folder contains:
 
 ---
 
-# 🧠 Notes
+# Notes
 
 - Structures can be downloaded automatically from the **Protein Data Bank** via PDB IDs.
 - Structures predicted by **AlphaFold2** or other tools can also be processed seamlessly.
