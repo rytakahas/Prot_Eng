@@ -16,7 +16,7 @@ Both workflows support full fine-tuning, inference, and experimentation for muta
 ---
 
 ## 📁 Repository Structure
-```bash
+```graphql
 Seq_MLs/
 ├── notebook/                   # Jupyter notebooks for exploration and training
 │   ├── protBert_ACT.ipynb      # Fine-tuning & analysis
