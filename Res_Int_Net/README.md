@@ -21,7 +21,7 @@ The pipeline can accept:
 
 ## Directory Structure
 
-```bash
+```graphql
 Res_Int_Net/
 ├── notebook/
 │ ├── prot_net_ligs_h.ipynb # Graph-based analysis of residue-level structural networks
