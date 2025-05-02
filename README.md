@@ -1,56 +1,75 @@
-# 🧬 Prot_Eng: Protein Engineering Toolkit
+# 🧬 Protein Activity Prediction Platform
 
-**Prot_Eng** provides tools for protein structure and sequence-based analysis, supporting mutation effect prediction and residue interaction network exploration.
-
----
-
-## Current Modules
-
-### 1. Res_Int_Net
-- **Residue Interaction Networks** (RINs) built from protein structures (PDB/AF2).
-- Ligand and cofactor interactions are **weighted** by the number of **hydrogen bonds**.
-- **Centrality metrics** (degree, closeness, betweenness) are calculated.
-- Currently available as a **Jupyter Notebook**.
-- API release planned soon!
-
-### 2. Seq_MLs
-- **Sequence-based Machine Learning models** for predicting mutation impacts.
-- Fine-tuning of pretrained models like **UniRep** and **ProtBERT** on evolutionary sequence data.
-- Currently available as **Jupyter Notebooks**.
-- API release planned soon!
+Fine-tuning pretrained protein sequence models on evolutionary information for mutation activity prediction.
 
 ---
 
-## Upcoming Developments
+## 📦 Project Overview
 
--  **API for Res_Int_Net**:
-  - Input: PDB ID or structure file.
-  - Output: RIN graph with centrality scores.
+This repository supports fine-tuning of:
 
--  **API for Seq_MLs**:
-  - Input: Protein sequence or mutant variants.
-  - Output: Predicted activity or fitness scores.
+- **UniRep** (LSTM, UniRef50 pretrained) – research-only.
+- **ProtBERT** (Transformer, BFD pretrained) – commercially allowed.
 
--  **Combined API** (Future):
-  - Jointly analyze sequence mutations **and** structure networks.
-  - Enable holistic mutation effect prediction considering both sequence and 3D structural contexts.
+Both workflows support full fine-tuning, inference, and experimentation for mutation prediction tasks.
 
 ---
 
-##  Requirements
+## 📁 Repository Structure
 
-- Python 3.8+
-- PyTorch
-- HuggingFace Transformers
-- Biopython
-- NetworkX
-- RDKit (optional for ligand analysis)
-
-Install all dependencies:
-
-```bash
-pip install -r requirements.txt
+```yaml
+Seq_MLs/ ├── notebook/ # Jupyter notebooks for exploration and training 
+├── prot_api_flask/ # 🧠 Flask API for mutation prediction │ 
+	├── prot_api_flask.py # Single-file API server │ 
+	├── sample_input.json # Example input for curl/postman │ 
+	├── README.md # API-specific instructions 
+	├── README.md # Project-wide description (this file)
 ```
 
+---
 
+## 🚀 Flask Mutation Prediction API
 
+A minimal REST API built with Flask to predict mutation effects based on a wild-type protein sequence and optional mutation data.
+
+### 🔧 Run the API
+
+`bash
+pip install flask pandas
+python prot_api_flask.py
+API will run at:
+http://127.0.0.1:5050/mutation_prediction
+
+📡 Example Request
+sample_input.json
+json
+Copy
+Edit
+{
+  "wild_type_sequence": "MKTIIALSYIFCLVFADYKDDDDK",
+  "mutation_csv_base64": null
+}
+Call with curl:
+bash
+Copy
+Edit
+curl -X POST http://127.0.0.1:5050/mutation_prediction \
+  -H "Content-Type: application/json" \
+  -d @sample_input.json
+You may base64-encode a CSV file and replace "mutation_csv_base64" with that encoded string.
+
+🛠️ Next Steps
+Replace dummy predictions with real ProtBERT inference
+
+Extend with additional models (e.g., ESM, ProteinMPNN)
+
+Add model versioning, confidence scoring, and logging
+
+Optional: containerize with Docker for deployment
+
+📄 License
+UniRep: Research-only.
+
+ProtBERT: Commercial use allowed under Hugging Face license.
+
+See individual model documentation for more details.
