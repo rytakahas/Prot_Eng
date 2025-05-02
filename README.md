@@ -16,32 +16,31 @@ Both workflows support full fine-tuning, inference, and experimentation for muta
 ---
 
 ## 📁 Repository Structure
-
 ```bash
-|Seq_MLs/
-├── notebook/ # Jupyter notebooks for exploration and training
-|	    ├── protBert_ACT.ipynb # Jupyter notebooks for fine-tuning & analysis
-|	    ├── unirep_ACT.ipynb # Jupyter notebooks for fine-tuning & analysis
-│ 	  └── README.md
-├── prot_api_flask/ # 🧠 Flask API for mutation prediction
-│	    ├── prot_api_flask.py # Single-file API server 
-|	    ├── sample_input.json # Example input for curl/postman 
-|	    └── README.md # API usage instructions 
-└── README.m
-|
-|Res_Int_Net/
-├── notebook/
-│ 	  ├── prot_net_ligs_h.ipynb # Graph-based analysis of residue-level structural networks
-│ 	  └── README.md
-├── prot_api_flask/
-│     ├── prot_api_flask.py # Flask API exposing residue graph analysis from structure
-│     ├── residue_network.py # Builds residue interaction graph & computes centralities
-│     ├── sample_input.json # Example request JSON with structure path
-│     └── README.md # API usage instructions
-└── README.m
-|README.m
-```
+Seq_MLs/
+├── notebook/                   # Jupyter notebooks for exploration and training
+│   ├── protBert_ACT.ipynb      # Fine-tuning & analysis
+│   ├── unirep_ACT.ipynb        # Fine-tuning & analysis
+│   └── README.md               # API usage instructions
+├── prot_api_flask/            # 🧠 Flask API for mutation prediction
+│   ├── prot_api_flask.py       # Single-file API server 
+│   ├── sample_input.json       # Example input for curl/Postman 
+│   └── README.md
+└── README.md
 
+Res_Int_Net/
+├── notebook/
+│   ├── prot_net_ligs_h.ipynb   # Graph-based residue-level network analysis
+│   └── README.md
+├── prot_api_flask/
+│   ├── prot_api_flask.py       # Flask API for residue graph analysis
+│   ├── residue_network.py      # Builds interaction graphs, computes centrality
+│   ├── sample_input.json       # Example structure input
+│   └── README.md               # API usage instructions
+└── README.md
+
+README.md
+```
 
 ---
 
