@@ -58,15 +58,16 @@ Seq_MLs/
 ├── notebook/protBert_ACT.ipynb # Jupyter notebooks for fine-tuning & analysis
 ├── notebook/unirep_ACT.ipynb # Jupyter notebooks for fine-tuning & analysis
 ├── prot_api_flask/           # Lightweight REST API for mutation prediction
-│   ├── prot_api_flask.py     # Flask API (single-file)
-│   ├── sample_input.json     # Example input for testing
-│   └── README.md             # API documentation
-├── README.md                 # Main project description (this file)
-📄 License Information
-Model	License	Usage
-UniRep	Academic (non-commercial)	: Research Only
-ProtBERT	Hugging Face (Apache 2.0)	: Commercial OK
+│     ├── prot_api_flask.py     # Flask API (single-file)
+│     ├── sample_input.json     # Example input for testing
+│     └── README.md             # API documentation
+README.md                     # Main project description (this file)
 ```
+### License Information
+- Model	License	Usage
+- UniRep	Academic (non-commercial)	: Research Only
+- ProtBERT	Hugging Face (Apache 2.0)	: Commercial OK
+
 ### Requirements
 - Python 3.8+
 - PyTorch
