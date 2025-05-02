@@ -17,14 +17,31 @@ Both workflows support full fine-tuning, inference, and experimentation for muta
 
 ## 📁 Repository Structure
 
-```yaml
-Seq_MLs/ ├── notebook/ # Jupyter notebooks for exploration and training 
-├── prot_api_flask/ # 🧠 Flask API for mutation prediction │ 
-	├── prot_api_flask.py # Single-file API server │ 
-	├── sample_input.json # Example input for curl/postman │ 
-	├── README.md # API-specific instructions 
-	├── README.md # Project-wide description (this file)
+```bash
+|Seq_MLs/
+├── notebook/ # Jupyter notebooks for exploration and training
+|	├── protBert_ACT.ipynb # Jupyter notebooks for fine-tuning & analysis
+|	├── unirep_ACT.ipynb # Jupyter notebooks for fine-tuning & analysis
+│ 	└── README.md
+├── prot_api_flask/ # 🧠 Flask API for mutation prediction
+│	├── prot_api_flask.py # Single-file API server 
+|	├── sample_input.json # Example input for curl/postman 
+|	└── README.md # API usage instructions 
+└── README.m
+|
+|Res_Int_Net/
+├── notebook/
+│ 	├── prot_net_ligs_h.ipynb # Graph-based analysis of residue-level structural networks
+│ 	└── README.md
+├── prot_api_flask/
+│     ├── prot_api_flask.py # Flask API exposing residue graph analysis from structure
+│     ├── residue_network.py # Builds residue interaction graph & computes centralities
+│     ├── sample_input.json # Example request JSON with structure path
+│     └── README.md # API usage instructions
+└── README.m
+|README.m
 ```
+
 
 ---
 
