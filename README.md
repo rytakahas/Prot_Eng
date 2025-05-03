@@ -4,7 +4,7 @@ Fine-tuning pretrained protein sequence models on evolutionary information for m
 
 ---
 
-## 📦 Project Overview
+## Project Overview
 
 This repository supports fine-tuning of:
 
@@ -15,7 +15,7 @@ Both workflows support full fine-tuning, inference, and experimentation for muta
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 ```graphql
 Seq_MLs/
 ├── notebook/                   # Jupyter notebooks for exploration and training
@@ -44,37 +44,36 @@ README.md
 
 ---
 
-## 🚀 Flask Mutation Prediction API
+## Flask Mutation Prediction API
 
 A minimal REST API built with Flask to predict mutation effects based on a wild-type protein sequence and optional mutation data.
 
-### 🔧 Run the API
+### Run the API
 
-`bash
+```bash
 pip install flask pandas
 python prot_api_flask.py
 API will run at:
 http://127.0.0.1:5050/mutation_prediction
+```
 
 📡 Example Request
 sample_input.json
-json
-Copy
-Edit
+```json
 {
   "wild_type_sequence": "MKTIIALSYIFCLVFADYKDDDDK",
   "mutation_csv_base64": null
 }
+```
 Call with curl:
-bash
-Copy
-Edit
+```bash
 curl -X POST http://127.0.0.1:5050/mutation_prediction \
   -H "Content-Type: application/json" \
   -d @sample_input.json
+```
 You may base64-encode a CSV file and replace "mutation_csv_base64" with that encoded string.
 
-🛠️ Next Steps
+## Next Steps
 Replace dummy predictions with real ProtBERT inference
 
 Extend with additional models (e.g., ESM, ProteinMPNN)
@@ -83,7 +82,7 @@ Add model versioning, confidence scoring, and logging
 
 Optional: containerize with Docker for deployment
 
-📄 License
+## License
 UniRep: Research-only.
 
 ProtBERT: Commercial use allowed under Hugging Face license.
