@@ -1,4 +1,4 @@
-# 🧬 Protein Activity Prediction Platform
+# 🧬 Protein Function Prediction Platform
 
 Fine-tuning pretrained protein sequence models on evolutionary information for mutation activity prediction.
 
@@ -22,7 +22,7 @@ Seq_MLs/
 │   ├── protBert_ACT.ipynb      # Fine-tuning & analysis
 │   ├── unirep_ACT.ipynb        # Fine-tuning & analysis
 │   └── README.md               # API usage instructions
-├── prot_api_flask/            # 🧠 Flask API for mutation prediction
+├── prot_api_flask/             # Flask API for mutation prediction
 │   ├── prot_api_flask.py       # Single-file API server 
 │   ├── sample_input.json       # Example input for curl/Postman 
 │   └── README.md
