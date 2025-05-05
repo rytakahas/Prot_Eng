@@ -1,6 +1,6 @@
 # Residue Interaction Network (RIN) Analysis
 
-This project builds **Residue Interaction Networks (RINs)** from protein structures, incorporating **ligands** and **cofactors** as weighted nodes based on the number of hydrogen bonds.
+This project builds **Residue Interaction Networks (RINs)** from protein structures, incorporating ligands and cofactors as weighted nodes based on the number of hydrogen bonds.
 
 The pipeline can accept:
 - **Experimental structures** (PDB IDs)
@@ -12,11 +12,10 @@ The pipeline can accept:
 
 - Parse protein 3D structures.
 - Construct a graph where nodes = residues/ligands, edges = interactions.
-- Ligand and cofactor connections are **weighted** by the number of **hydrogen bonds**.
-- Calculate **centrality measures** (degree, closeness, betweenness) for each node.
-- Analyze the impact of ligands/cofactors on the structural network.
+- Ligand and cofactor connections are weighted by the number of hydrogen bonds.
+- Calculate centrality measures (degree, closeness, betweenness) for each node.
+- Analyze redidue and ligands/cofactors and protein-protein intreactions on the structural network.
 
----
 ---
 
 ## Directory Structure
