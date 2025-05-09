@@ -176,6 +176,67 @@ Output: RIN graph metrics and centrality scores.
 - Build RIN graph dynamically with ligand interactions.
 - Return JSON with centrality results and graph summaries.
 - Dockerize for easy deployment.
+- R&D: Protein Allosteric Memory Condition
+
+  This repository explores the **memory condition** introduced in [Phys. Rev. Lett. 129, 028101 (2022)]  (https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.129.028101) and how it can be **applied across modeling paradigms** — from classical   normal mode analysis (ANM) to statistical mechanics (MD) and quantum mechanics (QM/MM).
+
+---
+
+#####  Memory Condition
+
+  The core condition for **retention of signal or memory** along an edge (i.e., between two interacting elements such as atoms, residues, or sites) is:
+
+  $\[
+  \left\langle \frac{q_{ij}^2}{\kappa_{ij}} \right\rangle > \gamma
+  \]$
+
+  where:
+
+  - $\( q_{ij} \)$: response to perturbation between nodes $\(i\)$ and $\(j\)$
+  - $\( \kappa_{ij} \)$: stiffness or resistance of the interaction
+  - $\( \gamma \)$: memory threshold
+
+  If this condition is satisfied, the edge is considered to have **retained memory** of the perturbation.
+
+  ---
+
+##### Model-Agnostic Interpretation
+
+  The condition is **model-agnostic**, and the terms can be redefined according to the physical layer:
+
+| Modeling Domain         | \( q_{ij} \): Response                   | \( \kappa_{ij} \): Resistance/Stiffness       | Notes |
+|-------------------------|------------------------------------------|-----------------------------------------------|-------|
+| **Normal Mode Analysis (ANM)** | Relative displacement in a mode      | Spring constant (usually 1.0)                  | Classical elastic model |
+| **Perturbation Response Scanning (PRS)** | Displacement due to force at node | Local mechanical resistance (can be Hessian)   | Linear force propagation |
+| **Molecular Dynamics (MD)**   | Time-averaged distance fluctuation   | Effective stiffness (from fluctuations)        | Requires long simulations |
+| **QM / QM-MM**                | Change in charge, bond length, or dipole | Force constant from PES, Hessian matrix        | Sensitive to electronic structure |
+
+---
+
+##### Application Scenarios
+
+  - Identify **signal-retaining edges** or **residue-residue pathways**
+  - Predict **allosteric hotspots** or **communication networks**
+  - Combine with **centrality analysis** (e.g., edge betweenness) for robust signal path detection
+
+---
+
+##### 🧪 Examples (Coming Soon)
+
+  - `prody_memory_condition.py`: Apply the condition using ANM from ProDy
+  - `qm_memory_evaluator.py`: Parse Hessian output from Gaussian/ORCA to evaluate memory condition at binding sites
+  - `networkx_memory_paths.ipynb`: Visualize predicted allosteric pathways with centrality overlays
+
+---
+
+##### References
+
+- Ronellenfitsch, H., & Dunkel, J. (2022). Memory formation in flow networks. *Physical Review Letters*, 129(2), 028101.
+- Bahar, I., Lezon, T. R., Yang, L. W., & Eyal, E. (2010). Global dynamics of proteins: bridging between structure and function. *Annual Review of Biophysics*, 39, 23–42.
+
+---
+
+
 
 ### Requirements
 - Python 3.8+
