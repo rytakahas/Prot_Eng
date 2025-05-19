@@ -30,7 +30,7 @@ Seq_MLs/
 
 Res_Int_Net/
 ├── notebook/
-│   ├── prot_net_ligs_h.ipynb   # Graph-based residue-level network analysis
+│   ├── prot_rin_mem.ipynb   # Graph-based residue-level network analysis
 │   └── README.md
 ├── prot_api_flask/
 │   ├── prot_api_flask.py       # Flask API for residue graph analysis
