@@ -1,9 +1,22 @@
 
 ---
-# Fine-Tuning Notebooks for Protein Sequence Prediction
+### Fine-Tuning for Protein Sequence Prediction:
+Main workflow:
+  1. Get MSA for your wild-type/target protein.
+
+  2. Calculate sequence weights using e.g. Henikoff or Meff methods.
+
+  3. Feed MSA sequences (with weights) to pretrain/fine-tune ProtBert (if using custom loss or attention).
+
+  4. Extract embeddings for all mutants (WT + experimental) using ProtBert.
+
+  5. Supervised regression/classification: Only use experimental mutants + measured property (activity, etc.) to fit a downstream model (e.g. MLP, XGBoost) on top of these embeddings.
+
+  Causion: Avoid leakage - Never train or validate on the same sequences used in initial unsupervised steps.
+  
 ---
 
-## `unirep_ACT.ipynb`
+### `unirep_ACT.ipynb`
 
 | Feature | Details |
 |:--------|:--------|
@@ -18,7 +31,7 @@
 
 ---
 
-## `protBert_ACT.ipynb`
+#### `protBert_ACT.ipynb`
 
 | Feature | Details |
 |:--------|:--------|
@@ -33,7 +46,7 @@
 
 ---
 
-## Fine-Tuning Details (Both Notebooks)
+#### Fine-Tuning Details (Both Notebooks)
 
 - Evolutionary sequences are mined via **BLAST+**.
 - Sequences are vectorized and fine-tuned fully.
@@ -42,7 +55,7 @@
 
 ---
 
-# Notes
+#### Notes
 
 - UniRep and ProtBERT have different licensing terms — make sure you understand which one to deploy based on your use case.
 - Both models were designed to be production-ready in a future API server.
