@@ -1,18 +1,23 @@
 # 🧬 Protein Function Prediction Platform
 
-Fine-tuning pretrained protein sequence models on evolutionary information for mutation activity prediction.
+Fine-tuning pretrained protein sequence models on evolutionary information for mutation prediction.
 
 ---
 
 ## Project Overview
 
-This repository supports fine-tuning of:
-
-- **UniRep** (LSTM, UniRef50 pretrained) – research-only.
-- **ProtBERT** (Transformer, BFD pretrained) – commercially allowed.
+- Seq_MLs
+This repository supports seqence prediction with fine-tuning:
+  - **UniRep** (LSTM, UniRef50 pretrained) – research-only.
+  - **ProtBERT** (Transformer, BFD pretrained) – commercially allowed.
 
 Both workflows support full fine-tuning, inference, and experimentation for mutation prediction tasks.
 
+- Res_Int_Net
+  This reporsitoru support protein network predictions:
+  - Residue Interaction Network (RIN): centralities, memories
+  - Graph Neural Network (GNN): GNN traning with DBs.
+  
 ---
 
 ## Repository Structure
