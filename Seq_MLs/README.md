@@ -6,12 +6,26 @@ Fine-tuning pretrained protein sequence models on evolutionary information for m
 
 ## Project Overview
 
-This repository fine-tunes:
+Main workflow:
+  1. Get MSA for your wild-type/target protein.
+
+  2. Calculate sequence weights using e.g. Henikoff or Meff methods.
+
+  3. Feed MSA sequences (with weights) to pretrain/fine-tune ProtBert (if using custom loss or attention).
+
+  4. Extract embeddings for all mutants (WT + experimental) using ProtBert.
+
+  5. Supervised regression/classification: Only use experimental mutants + measured property (activity, etc.) to fit a downstream model (e.g. MLP, XGBoost) on top of these embeddings.
+
+  Causion: Avoid leakage - Never train or validate on the same sequences used in initial unsupervised steps.
+
+DL, LLM models:
 
 - **UniRep** (LSTM, UniRef50 pretrained) – research-only.
 - **ProtBERT** (Transformer, BFD pretrained) – commercially allowed.
 
 Both workflows enable full fine-tuning thanks to their manageable model size and flexible architecture.
+However, LoRA/QLoRA (Low-Rank Adaptation/Quantized LoRA) can be deployed. 
 
 ---
 
