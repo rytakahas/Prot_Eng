@@ -204,7 +204,7 @@ Output: RIN graph metrics and centrality scores.
 
   The condition is **model-agnostic**, and the terms can be redefined according to the physical layer:
 
-| Modeling Domain         | \( q_{ij} \): Response                   | \( \kappa_{ij} \): Resistance/Stiffness       | Notes |
+| Modeling Domain         | $\( q_{ij} \)$: Response                   | $\( \kappa_{ij} \)$: Resistance/Stiffness       | Notes |
 |-------------------------|------------------------------------------|-----------------------------------------------|-------|
 | **Normal Mode Analysis (ANM)** | Relative displacement in a mode      | Spring constant (usually 1.0)                  | Classical elastic model |
 | **Perturbation Response Scanning (PRS)** | Displacement due to force at node | Local mechanical resistance (can be Hessian)   | Linear force propagation |
